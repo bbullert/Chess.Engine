@@ -1,5 +1,5 @@
-﻿using Chess.Engine.Enums;
-using Chess.Engine.Components;
+﻿using Chess.Engine.Components;
+using Chess.Engine.Enums;
 
 namespace Chess.Engine.Validators
 {

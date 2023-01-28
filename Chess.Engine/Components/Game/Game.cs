@@ -98,12 +98,15 @@ namespace Chess.Engine.Components
             Turns.Add(nextTurn);
         }
 
-        public void Resign()
+        public void Resign(Color color)
         {
+            var loser = Players.FirstOrDefault(x => x.Color == color);
+            var winner = Players.FirstOrDefault(x => x.Color != color);
+
             GameEnding = new GameEndingBuilder()
                 .New()
-                .LossFor(ActivePlayer)
-                .WinFor(PassivePlayer)
+                .LossFor(loser)
+                .WinFor(winner)
                 .WithDetails("{Loser} have resigned")
                 .Build();
         }
