@@ -22,6 +22,8 @@ namespace Chess.Engine.Validators
             }
             else if (king.Checks.Count() == 1)
             {
+                if (move.Piece.IsPinned) return false;
+
                 if (move.Capture?.CaptureSquare == king.Checks.First().DepartureSquare)
                     return true;
 
